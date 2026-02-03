@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarksCalc - Student Performance Calculator</title>
+    <meta name="description"
+        content="Calculate your academic performance instantly with MarksCalc. Total marks, average, percentage, and grade calculation made easy.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Marks<span class="highlight">Calc</span></a>
+            <div class="menu_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#calculator" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item action-btn-container"><a href="#calculator"
+                        class="btn btn-primary nav-btn">Calculate Marks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Calculate Your <span class="text-gradient">Academic Performance</span> Instantly
+                </h1>
+                <p class="hero-subtitle">Stop guessing your grades. Get accurate total marks, percentage, GPA, CGPA, and
+                    performance analysis in seconds.</p>
+                <div class="hero-btns">
+                    <a href="#calculator" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="#features" class="btn btn-secondary">View Features</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Richer Abstract Illustration -->
+                <div class="floating-composition">
+                    <div class="main-circle"></div>
+
+                    <div class="float-card card-grade">
+                        <div class="card-icon"><i class="fas fa-star"></i></div>
+                        <div class="card-text">
+                            <span>GPA</span>
+                            <strong>9.8</strong>
+                        </div>
+                    </div>
+
+                    <div class="float-card card-calc">
+                        <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="card-text">
+                            <span>Total</span>
+                            <strong>485/500</strong>
+                        </div>
+                    </div>
+
+                    <div class="float-card card-chart">
+                        <div class="chart-pie"></div>
+                        <div class="card-text">
+                            <span>Analysis</span>
+                            <div class="bar-mock"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Use MarksCalc?</h2>
+                <p>More than just a calculator. Complete academic analytics.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Instant Calculation</h3>
+                    <p>Get marks, percentage, GPA & CGPA immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-award"></i></div>
+                    <h3>Accurate Grading</h3>
+                    <p>Standardized grading logic for schools & colleges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+                    <h3>Dynamic Subjects</h3>
+                    <p>Add as many subjects as you need for your semester.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access from any device, anywhere, anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Marks Calculator</h2>
+                <p>Calculate Marks, GPA, and CGPA in one place.</p>
+            </div>
+
+            <div class="calculator-wrapper">
+                <!-- Input Form -->
+                <div class="calc-card input-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-edit"></i> Enter Details</h3>
+                    </div>
+                    <form id="marksForm">
+                        <div class="form-group">
+                            <label for="studentName">Student Name</label>
+                            <input type="text" id="studentName" placeholder="e.g. John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rollNumber">Roll / Register Number</label>
+                            <input type="text" id="rollNumber" placeholder="e.g. 12345" required>
+                        </div>
+
+                        <!-- Mode Toggle -->
+                        <div class="mode-toggle-container">
+                            <label>Student Type:</label>
+                            <div class="toggle-switch-wrapper">
+                                <span class="mode-label school-label active">School</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="modeCheck">
+                                    <span class="slider round"></span>
+                                </label>
+                                <span class="mode-label college-label">College</span>
+                            </div>
+                        </div>
+
+                        <!-- CGPA Section (Optional) - College Only -->
+                        <div class="cgpa-toggle-section college-only" style="display: none;">
+                            <div class="form-check">
+                                <input type="checkbox" id="calcCgpaCheck">
+                                <label for="calcCgpaCheck">Calculate CGPA (Include previous semesters)</label>
+                            </div>
+                            <div id="cgpaInputs" class="cgpa-inputs" style="display: none;">
+                                <div class="row-2">
+                                    <div class="form-group">
+                                        <label>Previous CGPA</label>
+                                        <input type="number" id="prevCgpa" step="0.01" min="0" max="10"
+                                            placeholder="e.g. 8.5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Previous Total Credits</label>
+                                        <input type="number" id="prevCredits" min="0" placeholder="e.g. 80">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"><span>Current Semester Subjects</span></div>
+
+                        <!-- Dynamic Subjects Header -->
+                        <div class="subjects-header">
+                            <span class="lbl-sub">Subject / Code</span>
+                            <span class="lbl-marks">Marks (100)</span>
+                            <span class="lbl-credit college-only" style="display: none;">Credits</span>
+                            <span class="lbl-action"></span>
+                        </div>
+
+                        <div id="subjectsContainer" class="subjects-container">
+                            <!-- Rows will be added by JS -->
+                        </div>
+
+                        <button type="button" id="addSubjectBtn" class="btn btn-sm btn-dashed"><i
+                                class="fas fa-plus"></i> Add Subject</button>
+
+                        <div id="validationMsg" class="validation-msg"></div>
+
+                        <div class="form-actions">
+                            <button type="button" id="resetBtn" class="btn btn-outline">Reset</button>
+                            <button type="submit" class="btn btn-primary btn-block">Calculate Result</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Result Display -->
+                <div class="calc-card result-card" id="resultCard" style="display: none;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-poll"></i> Performance Report</h3>
+                    </div>
+                    <div class="result-content">
+                        <div class="student-info">
+                            <h4 id="resName">Student Name</h4>
+                            <span id="resRoll">Roll No: 12345</span>
+                        </div>
+
+                        <div class="result-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Marks</span>
+                                <span class="stat-value" id="resTotal">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Average</span>
+                                <span class="stat-value" id="resAvg">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Percentage</span>
+                                <span class="stat-value" id="resPerc">0%</span>
+                            </div>
+                        </div>
+
+                        <div class="gpa-stats">
+                            <div class="gpa-box">
+                                <span class="gpa-label">SGPA (GPA)</span>
+                                <span class="gpa-value" id="resGpa">-</span>
+                            </div>
+                            <div class="gpa-box box-cgpa" id="boxCgpa" style="display: none;">
+                                <span class="gpa-label">CGPA</span>
+                                <span class="gpa-value" id="resCgpa">-</span>
+                            </div>
+                        </div>
+
+                        <div class="grade-box" id="gradeBox">
+                            <span class="grade-label">Overall Grade</span>
+                            <span class="grade-value" id="resGrade">-</span>
+                        </div>
+
+                        <div class="status-badge" id="resStatus">PASS</div>
+
+                        <div class="remarks">
+                            <p id="resRemark">Great job!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for result -->
+                <div class="calc-card placeholder-card" id="placeholderCard">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Your Result Awaits</h3>
+                    <p>Enter details and click calculate to view your performance report here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Calculate your marks in 4 simple steps.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-icon">1</div>
+                    <h4>Enter Details</h4>
+                    <p>Input your name and roll number.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step-item">
+                    <div class="step-icon">2</div>
+                    <h4>Input Marks</h4>
+                    <p>Enter marks for all 5 subjects.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step-item">
+                    <div class="step-icon">3</div>
+                    <h4>Calculate</h4>
+                    <p>Click the calculate button.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step-item">
+                    <div class="step-icon">4</div>
+                    <h4>View Result</h4>
+                    <p>See your grade and percentage.</p>
+                </div>
+            </div>
+            <!-- Mobile vertical alternative handled in CSS -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions or suggestions/feedback? We'd love to hear from you.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-envelope"></i> support@markscalc.edu</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Student Center, College Campus</li>
+                    </ul>
+                </div>
+                <div class="contact-form-box">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3>MarksCalc</h3>
+                <p>Empowering students with instant academic insights.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#calculator">Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MarksCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
